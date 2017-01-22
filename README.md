@@ -26,8 +26,8 @@ Use your arrow keys to get your adorable little sprite across the field of evil 
 
 
 ## List of Resources
-[http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/](http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/ "How to Make a Simple HTML5 Canvas Game")    
-[http://www.w3schools.com/html/html5_canvas.asp](http://www.w3schools.com/html/html5_canvas.asp "W3Schools HTML5 Canvas Reference")
-[http://keycode.info/](http://keycode.info/ "Keycode.info")
-[http://jlongster.com/Making-Sprite-based-Games-with-Canvas](http://jlongster.com/Making-Sprite-based-Games-with-Canvas "Making Sprite-based Games with Canvas")
-[https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS "Object-oriented JavaScript for Beginners")
+- [http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/](http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/ "How to Make a Simple HTML5 Canvas Game")    
+- [http://www.w3schools.com/html/html5_canvas.asp](http://www.w3schools.com/html/html5_canvas.asp "W3Schools HTML5 Canvas Reference")
+- [http://keycode.info/](http://keycode.info/ "Keycode.info")
+- [http://jlongster.com/Making-Sprite-based-Games-with-Canvas](http://jlongster.com/Making-Sprite-based-Games-with-Canvas "Making Sprite-based Games with Canvas")
+- [https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS "Object-oriented JavaScript for Beginners")
