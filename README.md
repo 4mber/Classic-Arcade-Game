@@ -2,9 +2,7 @@
 
 
 ## Summary:
-This is a variation on the classic arcade game Frogger! (But with much more adorable characters..) []( "Here's the demo!")
-
-<INSERT IMAGE!>
+This is a variation on the classic arcade game Frogger! (But with much more adorable characters..)[Here's the demo!](https://4mber.github.io/Frogger/)
 
 
 ## Installation:
