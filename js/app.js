@@ -1,5 +1,6 @@
 // Enemy Class: Sets image, location, & speed.
 var Enemy = function(x, y, speed) {
+    'use strict';
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
@@ -9,6 +10,7 @@ var Enemy = function(x, y, speed) {
 
 //Enemy Updates:
 Enemy.prototype.update = function(dt) {
+    'use strict';
     // Animates bugs.
     this.x += this.speed*dt;
     // When enemies exit right, they loop back to the left.
@@ -17,6 +19,7 @@ Enemy.prototype.update = function(dt) {
     };
     // Checks for collisions w/ player.
     var checkCollision = function(anEnemy) {
+        'use strict';
         if (
         player.y + 131 >= anEnemy.y + 90
         && player.x + 25 <= anEnemy.x + 88
@@ -32,12 +35,14 @@ Enemy.prototype.update = function(dt) {
 
 // Enemy Render: Draws enemies on canvas.
 Enemy.prototype.render = function() {
+    'use strict';
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 
 // Player Class: Sets image, location, & speed.
 var Player = function(x, y, speed) {
+    'use strict';
     this.sprite = 'images/char-princess-girl.png';
     this.x = x;
     this.y = y;
@@ -47,20 +52,21 @@ var Player = function(x, y, speed) {
 
 // Player Updates:
 Player.prototype.update = function(dt) {
+    'use strict';
     // Keeps player from leaving left, right, or bottom boundaries.
-    if (player.y > 500) {
-        player.y = 500;
+    if (this.y > 500) {
+        this.y = 500;
     };
-    if (player.x > 802.5) {
-        player.x = 802.5;
+    if (this.x > 802.5) {
+        this.x = 802.5;
     };
-    if (player.x < 2.5) {
-        player.x = 2.5;
+    if (this.x < 2.5) {
+        this.x = 2.5;
     };
     // Resets player to starting point & adds a point each time they reach the water!
-    if (player.y + 3 <= 0) {
-        player.x = 404;
-        player.y = 500;
+    if (this.y + 3 <= 0) {
+        this.x = 404;
+        this.y = 500;
         score += 1;
     };
 };
@@ -68,6 +74,7 @@ Player.prototype.update = function(dt) {
 
 // Player Render: Draws player on canvas & displays score.
 Player.prototype.render = function() {
+    'use strict';
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     // Displays Score:
     var displayScore = function(aScore) {
@@ -81,17 +88,18 @@ Player.prototype.render = function() {
 
 // Player Handle Input: Controls player with directional arrow keys.
 Player.prototype.handleInput = function(keyPress) {
+    'use strict';
     if (keyPress == 'left') {
-        player.x -= player.speed;
+        this.x -= this.speed;
     };
     if (keyPress == 'up') {
-        player.y -= player.speed - 14;
+        this.y -= this.speed - 14;
     };
     if (keyPress == 'right') {
-        player.x += player.speed;
+        this.x += this.speed;
     };
     if (keyPress == 'down') {
-        player.y += player.speed - 20;
+        this.y += this.speed - 20;
     };
 };
 
@@ -108,6 +116,7 @@ var scoreDiv = document.createElement('div');
 var numBugs = 5;
 // Creates a random number.
 var randomNum = function getRandomInt(min, max) {
+    'use strict';
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 // Creates an array to instantiate Enemy objects.
