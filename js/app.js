@@ -1,5 +1,6 @@
 'use strict';
 
+
 // Enemy Class: Sets image, location, & speed.
 var Enemy = function(x, y, speed) {
     this.sprite = 'images/enemy-bug.png';
@@ -8,17 +9,6 @@ var Enemy = function(x, y, speed) {
     this.speed = speed;
 };
 
-
-//Enemy Updates:
-Enemy.prototype.update = function(dt) {
-    // Animates bugs.
-    this.x += this.speed*dt;
-    // When enemies exit right, they loop back to the left.
-    if (this.x >= 805) {
-        this.x = -100;
-    };
-    this.checkCollision;
-};
 
 // Checks for collisions w/ player.
 Enemy.prototype.checkCollision = function() {
@@ -29,8 +19,20 @@ Enemy.prototype.checkCollision = function() {
         && player.x + 76 >= this.x + 11) {
             player.x = 404;
             player.y = 500;
-        };
-    };
+        }
+};
+
+
+//Enemy Updates:
+Enemy.prototype.update = function(dt) {
+    // Animates bugs.
+    this.x += this.speed*dt;
+    // When enemies exit right, they loop back to the left.
+    if (this.x >= 805) {
+        this.x = -100;
+    }
+    this.checkCollision();
+};
 
 
 // Enemy Render: Draws enemies on canvas.
@@ -39,12 +41,20 @@ Enemy.prototype.render = function() {
 };
 
 
-// Player Class: Sets image, location, & steps.
-var Player = function(x, y, step) {
+// Player Class: Sets image, location, & speed.
+var Player = function(x, y, speed) {
     this.sprite = 'images/char-princess-girl.png';
     this.x = x;
     this.y = y;
-    this.step = step;
+    this.speed = speed;
+};
+
+
+// Displays Score:
+Player.prototype.displayScore = function(aScore) {
+    var canvas = document.getElementsByTagName('canvas');
+    scoreDiv.innerHTML = 'Score: ' + aScore;
+    document.body.insertBefore(scoreDiv, canvas[0]);
 };
 
 
@@ -53,50 +63,44 @@ Player.prototype.update = function(dt) {
     // Keeps player from leaving left, right, or bottom boundaries.
     if (this.y > 500) {
         this.y = 500;
-    };
+    }
     if (this.x > 802.5) {
         this.x = 802.5;
-    };
+    }
     if (this.x < 2.5) {
         this.x = 2.5;
-    };
+    }
     // Resets player to starting point & adds a point each time they reach the water!
     if (this.y + 3 <= 0) {
         this.x = 404;
         this.y = 500;
         score += 1;
-    };
+    }
+
+    this.displayScore(score);
 };
 
 
 // Player Render: Draws player on canvas & displays score.
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    this.displayScore;
-};
-
-// Displays Score:
-Player.prototype.displayScore = function(aScore) {
-        var canvas = document.getElementsByTagName('canvas');
-        scoreDiv.innerHTML = 'Score: ' + aScore;
-        document.body.insertBefore(scoreDiv, canvas[0]);
 };
 
 
 // Player Handle Input: Controls player with directional arrow keys.
 Player.prototype.handleInput = function(keyPress) {
     if (keyPress == 'left') {
-        this.x -= this.step;
-    };
+        this.x -= this.speed;
+    }
     if (keyPress == 'up') {
-        this.y -= this.step - 14;
-    };
+        this.y -= this.speed - 14;
+    }
     if (keyPress == 'right') {
-        this.x += this.step;
-    };
+        this.x += this.speed;
+    }
     if (keyPress == 'down') {
-        this.y += this.step - 20;
-    };
+        this.y += this.speed - 20;
+    }
 };
 
 
@@ -118,22 +122,22 @@ var randomNum = function getRandomInt(min, max) {
 var allEnemies = [];
 // Randomly and evenly distributes the numBugs between the five rows, and sets a random speed for each row.
 for (var i = 0; i < numBugs; i++) {
-    if (i % 5 == 0) {
-        allEnemies.push(new Enemy(-50, 56, randomNum(100, 400)))
-    };
+    if (i % 5 === 0) {
+        allEnemies.push(new Enemy(-50, 56, randomNum(100, 400)));
+    }
     if (i % 5 == 1) {
-        allEnemies.push(new Enemy(-50, 142, randomNum(100, 400)))
-    };
+        allEnemies.push(new Enemy(-50, 142, randomNum(100, 400)));
+    }
     if (i % 5 == 2) {
-        allEnemies.push(new Enemy(-50, 225, randomNum(100, 400)))
-    };
+        allEnemies.push(new Enemy(-50, 225, randomNum(100, 400)));
+    }
     if (i % 5 == 3) {
-        allEnemies.push(new Enemy(-50, 308, randomNum(100, 400)))
-    };
+        allEnemies.push(new Enemy(-50, 308, randomNum(100, 400)));
+    }
     if (i % 5 == 4) {
-        allEnemies.push(new Enemy(-50, 390, randomNum(100, 400)))
-    };
-};
+        allEnemies.push(new Enemy(-50, 390, randomNum(100, 400)));
+    }
+}
 
 
 // Listens for key presses and sends the keys to your Player.handleInput() method.
