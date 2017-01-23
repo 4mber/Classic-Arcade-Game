@@ -1,6 +1,7 @@
+'use strict';
+
 // Enemy Class: Sets image, location, & speed.
 var Enemy = function(x, y, speed) {
-    'use strict';
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
@@ -10,49 +11,45 @@ var Enemy = function(x, y, speed) {
 
 //Enemy Updates:
 Enemy.prototype.update = function(dt) {
-    'use strict';
     // Animates bugs.
     this.x += this.speed*dt;
     // When enemies exit right, they loop back to the left.
     if (this.x >= 805) {
         this.x = -100;
     };
-    // Checks for collisions w/ player.
-    var checkCollision = function(anEnemy) {
-        'use strict';
+    this.checkCollision;
+};
+
+// Checks for collisions w/ player.
+Enemy.prototype.checkCollision = function() {
         if (
-        player.y + 131 >= anEnemy.y + 90
-        && player.x + 25 <= anEnemy.x + 88
-        && player.y + 73 <= anEnemy.y + 135
-        && player.x + 76 >= anEnemy.x + 11) {
+        player.y + 131 >= this.y + 90
+        && player.x + 25 <= this.x + 88
+        && player.y + 73 <= this.y + 135
+        && player.x + 76 >= this.x + 11) {
             player.x = 404;
             player.y = 500;
         };
     };
-    checkCollision(this);
-};
 
 
 // Enemy Render: Draws enemies on canvas.
 Enemy.prototype.render = function() {
-    'use strict';
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 
-// Player Class: Sets image, location, & speed.
-var Player = function(x, y, speed) {
-    'use strict';
+// Player Class: Sets image, location, & steps.
+var Player = function(x, y, step) {
     this.sprite = 'images/char-princess-girl.png';
     this.x = x;
     this.y = y;
-    this.speed = speed;
+    this.step = step;
 };
 
 
 // Player Updates:
 Player.prototype.update = function(dt) {
-    'use strict';
     // Keeps player from leaving left, right, or bottom boundaries.
     if (this.y > 500) {
         this.y = 500;
@@ -74,32 +71,31 @@ Player.prototype.update = function(dt) {
 
 // Player Render: Draws player on canvas & displays score.
 Player.prototype.render = function() {
-    'use strict';
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    // Displays Score:
-    var displayScore = function(aScore) {
+    this.displayScore;
+};
+
+// Displays Score:
+Player.prototype.displayScore = function(aScore) {
         var canvas = document.getElementsByTagName('canvas');
         scoreDiv.innerHTML = 'Score: ' + aScore;
         document.body.insertBefore(scoreDiv, canvas[0]);
-    };
-    displayScore(score);
 };
 
 
 // Player Handle Input: Controls player with directional arrow keys.
 Player.prototype.handleInput = function(keyPress) {
-    'use strict';
     if (keyPress == 'left') {
-        this.x -= this.speed;
+        this.x -= this.step;
     };
     if (keyPress == 'up') {
-        this.y -= this.speed - 14;
+        this.y -= this.step - 14;
     };
     if (keyPress == 'right') {
-        this.x += this.speed;
+        this.x += this.step;
     };
     if (keyPress == 'down') {
-        this.y += this.speed - 20;
+        this.y += this.step - 20;
     };
 };
 
@@ -116,7 +112,6 @@ var scoreDiv = document.createElement('div');
 var numBugs = 5;
 // Creates a random number.
 var randomNum = function getRandomInt(min, max) {
-    'use strict';
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 // Creates an array to instantiate Enemy objects.
