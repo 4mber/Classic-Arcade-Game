@@ -13,3 +13,6 @@ p {
     color: darkgray;
     font-size: 14px;
 }
+div {
+    margin-bottom: 0;
+}
