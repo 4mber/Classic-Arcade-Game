@@ -3,6 +3,9 @@ body {
     font-weight: lighter;
     text-align: center;
 }
+h1 {
+    margin-bottom: 0;
+}
 p {
     width: 100%;
     margin: auto;
