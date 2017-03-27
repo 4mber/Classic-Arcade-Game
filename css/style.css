@@ -1,7 +1,10 @@
 body {
     font-family: 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
     text-align: center;
 }
 p {
-    float: left;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
 }
