@@ -50,10 +50,10 @@ var Player = function(x, y, speed) {
 };
 
 
-// Displays Score:
+// Displays:
 Player.prototype.displayScore = function(aScore) {
     var canvas = document.getElementsByTagName('canvas');
-    scoreDiv.innerHTML = 'Score: ' + aScore;
+    scoreDiv.innerHTML = '<strong>Score: </strong>' + aScore;
     document.body.insertBefore(scoreDiv, canvas[0]);
 };
 
