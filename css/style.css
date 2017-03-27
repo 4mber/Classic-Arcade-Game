@@ -4,7 +4,9 @@ body {
     text-align: center;
 }
 p {
-    width: 60%;
+    width: 100%;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    color: darkgray;
+    font-size: 14px;
 }
