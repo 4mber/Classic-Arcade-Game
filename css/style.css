@@ -1,11 +1,14 @@
 body {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
     font-weight: lighter;
     text-align: center;
+    background: url(tree_bark.png);
 }
+
 h1 {
     margin-bottom: 0;
 }
+
 p {
     width: 100%;
     margin: auto;
@@ -13,6 +16,7 @@ p {
     color: darkgray;
     font-size: 14px;
 }
+
 div {
     margin-bottom: -40px;
 }
