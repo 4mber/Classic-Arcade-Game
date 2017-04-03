@@ -2,12 +2,12 @@ body {
     font-family: "Helvetica Neue", sans-serif;
     text-align: center;
     background: url(bigBrickWall.png);
-    text-shadow: 5px 5px 0px rgba(29, 30, 74, 0.33);
 }
 
 h1 {
     font-family: 'Press Start 2P', cursive;
     margin-bottom: 0;
+    text-shadow: 5px 5px 0px rgba(29, 30, 74, 0.33);
 }
 
 p {
