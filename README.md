@@ -31,4 +31,4 @@ Use your arrow keys to get your adorable little sprite across the field of evil 
 - [Object-oriented JavaScript for Beginners](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS)
 
 
-###### This project was created as a requirement for the Udacity Front End Development Nanodegree.
+###### This project was created as a requirement for the Udacity Front End Development Nanodegree!
