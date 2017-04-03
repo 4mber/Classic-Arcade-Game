@@ -29,3 +29,6 @@ Use your arrow keys to get your adorable little sprite across the field of evil 
 - [Keycode.info](http://keycode.info/)
 - [Making Sprite-based Games with Canvas](http://jlongster.com/Making-Sprite-based-Games-with-Canvas)
 - [Object-oriented JavaScript for Beginners](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS)
+
+
+###### This project was created as a requirement for the Udacity Front End Development Nanodegree.
