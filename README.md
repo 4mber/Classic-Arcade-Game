@@ -1,8 +1,8 @@
-# Frogger-esque Arcade Game
+# Classic Arcade Game!
 
 
 ## Summary:
-This is a variation on the classic arcade game Frogger! (But with much more adorable characters..) [Here's the demo!](https://4mber.github.io/Frogger/)
+This is a variation on the classic arcade game Frogger! (But with much more adorable characters..) [Here's the demo!](https://4mber.github.io/Classic-Arcade-Game/)
 
 
 ## Installation:
